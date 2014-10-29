@@ -26,7 +26,7 @@ chrome.extension.onRequest.addListener(function(request) {
     } else if(request.cmd == "createSearchMenu") {
         chrome.contextMenus.removeAll(function() {
             chrome.contextMenus.create({
-                "title": "Search On Twitter",
+                "title": "Search '" + request.selection + "' on Twitter",
                 "contexts":["selection"],
                 "onclick": searchOnTwitter
             });
